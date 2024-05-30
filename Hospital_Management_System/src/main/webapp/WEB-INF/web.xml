@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>Hospital_Management_System</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>addPatientController</display-name>
+    <servlet-name>addPatientController</servlet-name>
+    <servlet-class>org.hospital.admin.controller.addPatientController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addPatientController</servlet-name>
+    <url-pattern>/addPatient</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addDeptController</display-name>
+    <servlet-name>addDeptController</servlet-name>
+    <servlet-class>org.hospital.admin.controller.addDeptController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addDeptController</servlet-name>
+    <url-pattern>/addDept</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addStaffController</display-name>
+    <servlet-name>addStaffController</servlet-name>
+    <servlet-class>org.hospital.admin.controller.addStaffController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addStaffController</servlet-name>
+    <url-pattern>/addStaff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeletePatient</display-name>
+    <servlet-name>DeletePatient</servlet-name>
+    <servlet-class>org.hospital.admin.controller.DeletePatient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeletePatient</servlet-name>
+    <url-pattern>/deletePatient</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updatePatient</display-name>
+    <servlet-name>updatePatient</servlet-name>
+    <servlet-class>org.hospital.admin.controller.updatePatient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updatePatient</servlet-name>
+    <url-pattern>/updPatient</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>registerServ</display-name>
+    <servlet-name>registerServ</servlet-name>
+    <servlet-class>org.hospital.admin.controller.registerServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registerServ</servlet-name>
+   
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>loginServ</display-name>
+    <servlet-name>loginServ</servlet-name>
+    <servlet-class>org.hospital.admin.controller.loginServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServ</servlet-name>
+   
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>assignDoct</display-name>
+    <servlet-name>assignDoct</servlet-name>
+    <servlet-class>org.hospital.admin.controller.assignDoct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignDoct</servlet-name>
+    
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>medicinecontroller</display-name>
+    <servlet-name>medicinecontroller</servlet-name>
+    <servlet-class>org.hospital.admin.controller.medicinecontroller</servlet-class>
+  </servlet>
+  
+</web-app>
+
+</element>
+
+

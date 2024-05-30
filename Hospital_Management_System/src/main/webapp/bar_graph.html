@@ -1,0 +1,39 @@
+<div class="col-md-6 ml-0" style="height:440px;">
+        <div class="container heading mt-4">
+          <h1 class="mb-4 ml-5">Gender Of New Patients in OPD Year (2021-2024)</h1>
+          <canvas id="genderChart"></canvas>
+        </div>
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          var ctx = document.getElementById('genderChart').getContext('2d');
+          var genderChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: ['2021', '2022', '2023', '2024'],
+                  datasets: [{
+                      label: 'Female',
+                      data: [2,3,4,5],
+                      backgroundColor: '#008B8B',
+                      borderColor: '#008B8B',
+                      borderWidth: 1
+                  }, {
+                      label: 'Male',
+                      data: [1,2,3,4],
+                      backgroundColor: '#03254C',
+                      borderColor: '4682b4',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }]
+                  }
+              }
+          });
+        </script>
+      </div>

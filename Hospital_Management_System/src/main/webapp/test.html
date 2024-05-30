@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dropdown Menu</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: 0;
+            margin-left: 0;
+            background-color:lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="admin-logo mb-4">
+            <img src="images/admin2.jpeg" alt="Admin Logo" style="width: 40%; border-radius: 50%; height: 40%;" class="ml-4">
+            <h5 class="mt-2 ml-4">Admin</h5>
+        </div>
+        <div class="dropdown ml-4">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bars mr-2"></i> Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="adminDashBoard.jsp">
+                    <i class="fas fa-tachometer-alt mr-2 ml-3"></i> Overview
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user mr-2"></i> Patients</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="patient_info.jsp">Assign Doctor</a>
+                        <a class="dropdown-item" href="mainProject.jsp">Add Patient</a>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-calendar-check mr-2"></i> Appointments</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="patientDoct-info.jsp">Schedule Appointment</a>
+                        <a class="dropdown-item" href="viewAppointments.jsp">View appointment</a>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="departmentMain.jsp" id="dept">
+                    <i class="fas fa-building mr-2 ml-3"></i> Departments
+                </a>
+                <a class="dropdown-item" href="staffMain.jsp" id="staff">
+                    <i class="fas fa-users mr-2 ml-3"></i> Staff
+                </a>
+                <a class="dropdown-item" href="logout" style="margin-top:9rem;">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // For handling submenu in dropdown
+        $('.dropdown-submenu .dropdown-toggle').on("click", function(e) {
+            e.stopPropagation();
+            $(this).next('.dropdown-menu').toggleClass('show');
+            $(this).parents('.dropdown-submenu').siblings().find('.dropdown-menu').removeClass('show');
+        });
+
+        // Close dropdowns on clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.dropdown-menu').length) {
+                $('.dropdown-menu').removeClass('show');
+            }
+        });
+    </script>
+</body>
+</html>

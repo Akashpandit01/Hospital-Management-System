@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+ body {
+      background-color: #f8f9fa;
+      font-family: Inria Serif-Regular;
+       
+      min-height:100vh;
+       position:relative;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0 0;
+      box-shadow: inset -1px 0 0 rgba(243, 240, 240, 0.8);
+     
+      background-color: #62779f; /* Dark background */
+       /* Light text color */
+      width: 250px; /* Width of the sidebar */
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 10px;
+      padding-top:1rem;
+    }
+    .sidebar ul li a {
+      color:#fff;
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
+    }
+    .dashboard-header {
+      background-color: #68b2f8; /* Primary color */
+      color: rgb(245, 238, 238); /* White text color */
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    
+    .img
+    {
+      border-radius: 50%;
+    }
+    
+    .card-body p
+    {
+      font-weight:700;
+      font-size: 20px;
+      color:#4083c2;
+    }
+    .admin-logo h5
+    {
+      color:#fff;
+      font-weight: 700;
+    }
+    
+    .heading h1, .appo-heading h3
+    {
+      font-size: 20px;
+      font-family: Inria Serif-Regular;
+      color: #093b6a;
+      font-weight: 700;
+      letter-spacing: normal;
+    }
+    .main-content
+    {
+      background:#e3edff;
+      min-height: 99.8vh;
+      position:absolute;
+      margin-left: 250px; /* Width of the sidebar */
+      padding: 20px;
+      
+      width:83.6%;
+    }
+    
+    button 
+   {
+     
+     color:white;
+     letter-spacing:1px;
+     font-weight:700;
+   }
+   
+   #addbutton
+   {
+     font-weight:700;
+     padding:0.2rem;
+     font-family: Inria Serif-Regular;
+    
+   }
+    button:hover
+   {
+      background:#3291e6;
+   }
+   i:hover
+   {
+   cursor:pointer;
+    color:#3291e6;
+   }
+   
+   
+  input::placeholder
+  {
+    color:#999;
+    font-style:italic;
+    opacity:0.7; 
+  }
+  
+  .form-popup {
+      width: 35%;
+      height: 80vh;
+      margin-top:8vh;
+      background-color: rgb(110, 108, 108);
+      position: absolute;
+      z-index: 9999;
+      border: 1px solid #ccc;
+      right: 0; /* Align to the right side */
+      top: 14vh; /* Adjust position */
+      padding: 20px;
+      display: none;
+    }
+    .form-popup.show {
+      display: block;
+    }
+    .success-message {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      display: none;
+      z-index: 10000;
+    }
+    
+    

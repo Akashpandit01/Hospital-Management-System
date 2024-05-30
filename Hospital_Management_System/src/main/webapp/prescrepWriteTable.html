@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='CSS/prescreption.css'>
+    
+</head>
+<body>
+    
+<div class="container mt-5">
+    <h2>Prescription Form</h2>
+    <form id="prescriptionForm">
+       <div class="row">
+       
+        <div class="form-group col-md-6">
+            <label for="patientName">Patient Name</label>
+            <input type="hidden" class="form-control" id="patientName" name="patientName" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="doctorName">Doctor Name</label>
+            <input type="hidden" class="form-control" id="doctorName" name="doctorName" required>
+        </div>
+        </div>
+        <div id="medicineList">
+            <div class="form-group row medicine-entry">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="medicineName[]" placeholder="Medicine Name" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="dosage[]" placeholder="Dosage" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="frequency[]" placeholder="Frequency" required>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger remove-medicine">Remove</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="addMedicine">Add Medicine</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <div id="prescriptionInfo" class="mt-5">
+        <h3>Prescription Information</h3>
+        <p id="patientInfo"></p>
+        <p id="doctorInfo"></p>
+        <p id="dateInfo"></p>
+        <div id="prescriptionDetails"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Add new medicine entry
+    $('#addMedicine').click(function() {
+        const newEntry = `<div class="form-group row medicine-entry">
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="medicineName[]" placeholder="Medicine Name" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="dosage[]" placeholder="Dosage" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" name="frequency[]" placeholder="Frequency" required>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-danger remove-medicine">Remove</button>
+            </div>
+        </div>`;
+        $('#medicineList').append(newEntry);
+    });
+
+    // Remove medicine entry
+    $(document).on('click', '.remove-medicine', function() {
+        $(this).closest('.medicine-entry').remove();
+    });
+
+    // Handle form submission
+    $('#prescriptionForm').submit(function(event) {
+        event.preventDefault();
+        let prescriptionDetails = '';
+        $('.medicine-entry').each(function() {
+            const name = $(this).find('input[name="medicineName[]"]').val();
+            const dosage = $(this).find('input[name="dosage[]"]').val();
+            const frequency = $(this).find('input[name="frequency[]"]').val();
+            prescriptionDetails += `<p>Medicine: ${name}, Dosage: ${dosage}, Frequency: ${frequency}</p>`;
+        });
+        const patientName = $('#patientName').val();
+        const doctorName = $('#doctorName').val();
+        const today = new Date();
+        const dateInfo = `Date: ${today.toLocaleDateString()}, Time: ${today.toLocaleTimeString()}`;
+        $('#patientInfo').text(`Patient Name: ${patientName}`);
+        $('#doctorInfo').text(`Doctor Name: ${doctorName}`);
+        $('#dateInfo').text(dateInfo);
+        $('#prescriptionDetails').html(prescriptionDetails);
+        $('#prescriptionInfo').show(); // Show prescription info before printing
+//window.print();
+    });
+});
+</script>
+</body>
+</html>

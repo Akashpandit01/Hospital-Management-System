@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+body {
+      background-color: #f8f9fa;
+      font-family: Inria Serif-Regular;
+  
+    }
+    .sidebar {
+     
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0 0;
+      box-shadow: inset -1px 0 0 rgba(243, 240, 240, 0.8);
+     
+      background-color: #62779f; /* Dark background */
+       /* Light text color */
+       /* Width of the sidebar */
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 10px;
+      padding-top:1rem;
+    }
+    .sidebar ul li a {
+      color:#fff;
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
+    }
+    .main-contents {
+      background:#e3edff;
+      height: 100vh;
+    }
+    
+    
+    .img
+    {
+      border-radius: 5%;
+      height: 500px;
+    }
+    
+    
+    .admin-logo h5
+    {
+      color:#fff;
+      font-weight: 700;
+    }
+    
+    .heading h1, .appo-heading h3
+    {
+      font-size: 20px;
+      font-family: Inria Serif-Regular;
+      color: #093b6a;
+      font-weight: 700;
+      letter-spacing: normal;
+    }
+    
+    button 
+   {
+     
+     color:white;
+     letter-spacing:1px;
+     font-weight:700;
+   }
+   
+   
+    button:hover
+   {
+      background:#3291e6;
+   }
+   
+   @media (max-width: 777px) {
+    .sub h2 {
+      margin-top:2rem;
+    }
+   }
+    
+    @media (max-width: 1450px) {
+     h5{
+      
+      margin-left:-5rem;
+    }
+  
+    
+  }
+  
+  @media (max-width: 1421px) {
+     h5{
+      margin-left:-10rem;
+    }
+  
+    
+  }
+  @media (max-width: 1410px) {
+     h5{
+      margin-right:10rem;
+    }
+  
+    
+  }
+  
+  @media (max-width: 585px)
+  {
+    .sidebar
+    {
+    width:100%;
+    }
+  }
